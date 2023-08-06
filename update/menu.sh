@@ -2,12 +2,12 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
-colornow=$(cat /etc/yokkovpn/theme/color.conf)
+colornow=$(cat /etc/hokagevpn/theme/color.conf)
 export NC="\e[0m"
 export YELLOW='\033[0;33m';
 export RED="\033[0;31m" 
-export COLOR1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-export COLBG1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
+export COLOR1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+export COLBG1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
 ###########- END COLOR CODE -##########
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
@@ -16,7 +16,7 @@ CITY=$(curl -s ipinfo.io/city )
 
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/ipmini > /root/tmp
+    curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -34,8 +34,8 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-Isadmin=$(curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/ipmini | grep $MYIP | awk '{print $5}')
+Name=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | grep $MYIP | awk '{print $2}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | grep $MYIP | awk '{print $5}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -52,7 +52,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -70,7 +70,7 @@ if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 rm -f /home/needupdate > /dev/null 2>&1
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | grep $MYIP | awk '{print $3}')
 fi
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
@@ -114,7 +114,7 @@ echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
 menu
 else
-echo "IP=$host" > /var/lib/yokkovpn-pro/ipvps.conf
+echo "IP=$host" > /var/lib/hokagevpn-pro/ipvps.conf
 echo ""
 echo "  [INFO] Dont forget to renew cert"
 echo ""
@@ -133,18 +133,18 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/Khoiril7/update/main/install_up.sh" && chmod +x /root/install_up.sh
+wget -q -O /root/install_up.sh "https://raw.githubusercontent.com/hokagelegend2023/update/main/install_up.sh" && chmod +x /root/install_up.sh
 sleep 2
 ./install_up.sh
 sleep 5
 rm /root/install_up.sh
 rm /opt/.ver
-version_up=$( curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/version)
+version_up=$( curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/version)
 echo "$version_up" > /opt/.ver
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Successfully Up To Date!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •                $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -227,7 +227,7 @@ else
 fi;
 echo -e "$COLOR1└─────────────────────────────────────────────────┘$NC"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 echo -ne " Select menu : "; read opt
