@@ -1,14 +1,14 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-colornow=$(cat /etc/yokkovpn/theme/color.conf)
+colornow=$(cat /etc/hokagevpn/theme/color.conf)
 NC="\e[0m"
-COLOR1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+COLOR1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 
-APIGIT=$(cat /etc/yokkovpn/github/api)
-EMAILGIT=$(cat /etc/yokkovpn/github/email)
-USERGIT=$(cat /etc/yokkovpn/github/username)
+APIGIT=$(cat /etc/hokagevpn/github/api)
+EMAILGIT=$(cat /etc/hokagevpn/github/email)
+USERGIT=$(cat /etc/hokagevpn/github/username)
 
 export RED='\033[0;31m';
 export GREEN='\033[0;32m';
@@ -29,7 +29,7 @@ echo -e "$COLOR1│${NC}"
 echo -e "$COLOR1│${NC}  ${ERROR} DNS Cannot Be Empty";
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -46,7 +46,7 @@ echo -e "$COLOR1│${NC}  ${INFO} DNS Update Successfully";
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHORIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -78,7 +78,7 @@ echo -e "$COLOR1│${NC}   $INFO Operation Cancelled By User"
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -104,7 +104,7 @@ echo -e "$COLOR1│${NC}"
 echo -e "$COLOR1│${NC}  $COLOR1 [00]$NC • GO BACK"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHORIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
