@@ -1,14 +1,14 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-colornow=$(cat /etc/yokkovpn/theme/color.conf)
+colornow=$(cat /etc/hokagevpn/theme/color.conf)
 NC="\e[0m"
-COLOR1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+COLOR1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/hokagevpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 
-APIGIT=$(cat /etc/yokkovpn/github/api)
-EMAILGIT=$(cat /etc/yokkovpn/github/email)
-USERGIT=$(cat /etc/yokkovpn/github/username)
+APIGIT=$(cat /etc/hokagevpn/github/api)
+EMAILGIT=$(cat /etc/hokagevpn/github/email)
+USERGIT=$(cat /etc/hokagevpn/github/username)
 
 
 function setapi(){
@@ -18,10 +18,10 @@ echo -e "$COLOR1│${NC} ${COLBG1}              • IPVPS GITHUB API •        
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 
-if [[ -f /etc/yokkovpn/github/api && -f /etc/yokkovpn/github/email && /etc/yokkovpn/github/username ]]; then
+if [[ -f /etc/hokagevpn/github/api && -f /etc/hokagevpn/github/email && /etc/hokagevpn/github/username ]]; then
    rec="OK"
 else
-    mkdir /etc/yokkovpn/github > /dev/null 2>&1
+    mkdir /etc/hokagevpn/github > /dev/null 2>&1
 fi
 
 read -p " E-mail   : " EMAIL1
@@ -29,7 +29,7 @@ if [ -z $EMAIL1 ]; then
 echo -e "$COLOR1│${NC}   [INFO] Please Input Your Github Email Adress"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -41,7 +41,7 @@ if [ -z $USERNAME1 ]; then
 echo -e "$COLOR1│${NC}   [INFO] Please Input Your Github Username"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHORIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND•            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -53,7 +53,7 @@ if [ -z $API1 ]; then
 echo -e "$COLOR1│${NC}  [INFO] Please Input Your Github API"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -61,10 +61,10 @@ menu-ip
 fi
 
 sleep 2
-echo "$EMAIL1" > /etc/yokkovpn/github/email
-echo "$USERNAME1" > /etc/yokkovpn/github/username
-echo "$API1" > /etc/yokkovpn/github/api
-echo "ON" > /etc/yokkovpn/github/gitstat
+echo "$EMAIL1" > /etc/hokagevpn/github/email
+echo "$USERNAME1" > /etc/hokagevpn/github/username
+echo "$API1" > /etc/hokagevpn/github/api
+echo "ON" > /etc/hokagevpn/github/gitstat
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
@@ -77,7 +77,7 @@ echo -e "$COLOR1│${NC}   • User  : $USERNAME1"
 echo -e "$COLOR1│${NC}   • API   : $API1"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -97,7 +97,7 @@ echo -e "$COLOR1│${NC}  • All U need Is Create a new repository "
 echo -e "$COLOR1│${NC}    & Nammed : permission "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -120,7 +120,7 @@ if [[ $daftar = $REQIP ]]; then
 echo -e "$COLOR1│${NC}  [INFO] VPS IP Already Registered!!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -141,7 +141,7 @@ cd
 echo -e "$COLOR1│${NC}  [INFO] Please Input client"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • BONDOWOSO VPN STORE •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE VPN STORE •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -155,7 +155,7 @@ cd
 echo -e "$COLOR1│${NC}   [INFO] Please Input exp date"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -198,7 +198,7 @@ IPVPS       : $daftar
 Reg Date    : $hariini
 " 
 echo "${TEXT}" >>/root/permission/newuser 
-echo "### $client $exp $daftar $isadmin" >>/root/permission/ipmini 
+echo "### $client $exp $daftar $isadmin" >>/root/ipmini/main/ijin 
 git add .
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
@@ -221,7 +221,7 @@ cd
 rm -rf /root/permission
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -242,10 +242,10 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}                 • DELETE IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 2-4 | nl -s '. '
+grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 2-4 | nl -s '. '
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -rp "   Please Input Number : " nombor
@@ -258,17 +258,17 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1│${NC}   [INFO] Please Input Correct Number"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 fi
 
-name1=$(grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 2 | sed -n "$nombor"p) #name
-exp=$(grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 3 | sed -n "$nombor"p) #exp
-ivps1=$(grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 4 | sed -n "$nombor"p) #ip
-sed -i "s/### $name1 $exp $ivps1//g" /root/permission/ipmini &> /dev/null
+name1=$(grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 2 | sed -n "$nombor"p) #name
+exp=$(grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 3 | sed -n "$nombor"p) #exp
+ivps1=$(grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 4 | sed -n "$nombor"p) #ip
+sed -i "s/### $name1 $exp $ivps1//g" /root/ipmini/main/ijin &> /dev/null
 hariini2=$(date -d "0 days" +"%Y-%m-%d")
 TEXTD="
 Name     : $name1
@@ -296,7 +296,7 @@ cd
 rm -rf /root/permission
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -319,7 +319,7 @@ git init
 touch ipmini
 echo -e "   [ ${Lyellow}INFO${NC} ] Checking list.."
 
-NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/root/permission/ipmini")
+NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/root/ipmini/main/ijin")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
   clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -329,7 +329,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}   [INFO] You have no existing clients!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -340,10 +340,10 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 2-4 | nl -s '. '
+grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 2-4 | nl -s '. '
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHORIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND•            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
@@ -362,7 +362,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}   [INFO] Please Input Correct Number"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -381,15 +381,15 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}  [INFO] Please Input Correct Number"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
 fi
-name1=$(grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p) #name
-exp=$(grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p) #exp
-ivps1=$(grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p) #ip
+name1=$(grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p) #name
+exp=$(grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p) #exp
+ivps1=$(grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 4 | sed -n "${CLIENT_NUMBER}"p) #ip
 
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
@@ -397,7 +397,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(((d1 - d2) / 86400))
 exp3=$(($exp2 + $masaaktif))
 exp4=$(date -d "$exp3 days" +"%Y-%m-%d")
-sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/permission/ipmini
+sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/ipmini/main/ijin
 git add .
 git commit -m renew
 git branch -M main
@@ -419,7 +419,7 @@ cd
 rm -rf /root/permission
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -441,10 +441,10 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-grep -E "^### " "/root/permission/ipmini" | cut -d ' ' -f 2 | nl -s '. '
+grep -E "^### " "/root/ipmini/main/ijin" | cut -d ' ' -f 2 | nl -s '. '
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 cd
 rm -rf /root/permission
@@ -454,11 +454,11 @@ menu-ip
 }
 function resetipvps(){
 clear
-rm -f /etc/yokkovpn/github/email
-rm -f /etc/yokkovpn/github/username
-rm -f /etc/yokkovpn/github/api
-rm -f /etc/yokkovpn/github/gitstat
-echo "OFF" > /etc/yokkovpn/github/gitstat
+rm -f /etc/hokagevpn/github/email
+rm -f /etc/hokagevpn/github/username
+rm -f /etc/hokagevpn/github/api
+rm -f /etc/hokagevpn/github/gitstat
+echo "OFF" > /etc/hokagevpn/github/gitstat
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}              • RESET GITUB API •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -466,7 +466,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}  [INFO] Github API Reseted Successfully"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -481,10 +481,10 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} [INFO] Only PRO Users Can Use This Panel"
 echo -e "$COLOR1│${NC} [INFO] Buy Premium Membership : "
-echo -e "$COLOR1│${NC} [INFO] PM : Yokko Eddy Store / wa.me/6281949400586/"
+echo -e "$COLOR1│${NC} [INFO] PM : HOKAGE LEGENDStore / wa.me/087726917005/"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -495,16 +495,16 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-GITREQ=/etc/yokkovpn/github/gitstat
+GITREQ=/etc/hokagevpn/github/gitstat
 if [ -f "$GITREQ" ]; then
     cekk="ok"
 else 
-    mkdir /etc/yokkovpn/github
-    touch /etc/yokkovpn/github/gitstat
-    echo "OFF" > /etc/yokkovpn/github/gitstat
+    mkdir /etc/hokagevpn/github
+    touch /etc/hokagevpn/github/gitstat
+    echo "OFF" > /etc/hokagevpn/github/gitstat
 fi
 
-stst1=$(cat /etc/yokkovpn/github/gitstat)
+stst1=$(cat /etc/hokagevpn/github/gitstat)
 if [ "$stst1" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -514,13 +514,13 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}   • You Need To Set Github API First!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to Set API"
 setapi
 fi
-stst=$(cat /etc/yokkovpn/github/gitstat)
+stst=$(cat /etc/hokagevpn/github/gitstat)
 if [ "$stst" = "ON" ]; then
 APIOK="CEK API"
 rex="viewapi"
@@ -543,7 +543,7 @@ echo -e "   $COLOR1 [00]$NC • GO BACK"
 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • KHOIRIL ANAM •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
