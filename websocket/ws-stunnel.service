@@ -1,6 +1,6 @@
 [Unit]
-Description=SSH Over Websocket Python By KHOIRIL ANAM
-Documentation=https://KHOIRIL ANAM
+Description=SSH Over Websocket Python By HOKAGE LEGEND
+Documentation=https://minato.hokagelegend.my.id
 After=network.target nss-lookup.target
 
 [Service]
