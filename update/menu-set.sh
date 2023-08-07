@@ -189,6 +189,8 @@ systemctl restart squid
 echo -e " $COLOR1│${NC}  [INFO] • Restarting Squid Services           $COLOR1│${NC}"
 sleep 1
 systemctl restart openvpn
+echo -e " $COLOR1│${NC}  [INFO] • Restarting Open Vpn                 $COLOR1│${NC}"
+sleep 1
 systemctl restart nginx
 echo -e " $COLOR1│${NC}  [INFO] • Restarting Nginx Services           $COLOR1│${NC}"
 sleep 1
