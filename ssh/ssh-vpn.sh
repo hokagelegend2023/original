@@ -175,6 +175,10 @@ sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
+echo "=== Install Open Vpn ==="
+# install dropbear
+sudo apt -y install openvpn
+
 echo "=== Install Dropbear ==="
 # install dropbear
 apt -y install dropbear
