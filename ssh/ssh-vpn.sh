@@ -177,9 +177,8 @@ sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 
 echo "=== Install Python ==="
 # install dropbear
-python3 --version
-sudo apt install python3
-python3 --version
+sudo apt install python
+python --version
 
 echo "=== Install Open Vpn ==="
 # install dropbear
