@@ -129,15 +129,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 Save_And_Exit () {
     DATE=$(date +'%d %B %Y')
     cd /root/user-backup
-    git config --global user.email "hokagelegend99@gmail.com" &> /dev/null
-    git config --global user.name "HokageLegend" &> /dev/null
+    git config --global user.email "dedenseratus@gmail.com" &> /dev/null
+    git config --global user.name "hokagelegend2023" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m backup &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/hokagelegend2023/backup
-    git push -f https://github.com/hokagelegend2023/backup.git &> /dev/null
+    git push -f https://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@github.com/hokagelegend2023/backup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
