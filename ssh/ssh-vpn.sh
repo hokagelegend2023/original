@@ -194,6 +194,8 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
+/etc/init.d/dropbear stop
+
 
 cd
 # install stunnel
