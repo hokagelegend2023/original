@@ -559,6 +559,9 @@ systemctl restart xray
 systemctl restart nginx
 systemctl enable runn
 systemctl restart runn
+/etc/init.d/dropbear stop 
+/etc/init.d/dropbear start
+/etc/init.d/dropbear restart
 
 sleep 1
 wget -q -O /usr/bin/auto-set "https://raw.githubusercontent.com/hokagelegend2023/original/main/xray/auto-set.sh" && chmod +x /usr/bin/auto-set 
