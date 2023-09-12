@@ -94,7 +94,7 @@ echo -e "$COLOR1│${NC}  • Email : $EMAILGIT"
 echo -e "$COLOR1│${NC}  • User  : $USERGIT"
 echo -e "$COLOR1│${NC}  • API   : $APIGIT"
 echo -e "$COLOR1│${NC}  • All U need Is Create a new repository "
-echo -e "$COLOR1│${NC}    & Nammed : permission "
+echo -e "$COLOR1│${NC}    & Nammed : ipmini "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
@@ -110,12 +110,12 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-rm -rf /root/permission
+rm -rf /root/ipmini
 read -p "│  NEW IPVPS : " daftar
 echo -e "$COLOR1│${NC}"
 echo -e "$COLOR1│${NC}  [INFO] Checking the IPVPS!"
 sleep 1
-REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/permission/main/ipmini | awk '{print $4}' | grep $daftar)
+REQIP=$(curl -sS https://raw.githubusercontent.com/${USERGIT}/ipmini/main/ijin | awk '{print $4}' | grep $daftar)
 if [[ $daftar = $REQIP ]]; then
 echo -e "$COLOR1│${NC}  [INFO] VPS IP Already Registered!!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
@@ -184,8 +184,8 @@ exp=$(date -d "$exp days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/permission.git &> /dev/null
-cd /root/permission/ &> /dev/null
+git clone https://github.com/${USERGIT}/ipmini.git &> /dev/null
+cd /root/ipmini/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 touch ipmini &> /dev/null
@@ -197,13 +197,13 @@ Exp         : $exp
 IPVPS       : $daftar 
 Reg Date    : $hariini
 " 
-echo "${TEXT}" >>/root/permission/newuser 
+echo "${TEXT}" >>/root/ipmini/newuser 
 echo "### $client $exp $daftar $isadmin" >>/root/ipmini/main/ijin 
 git add .
 git commit -m register &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/permission.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/permission.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/ipmini.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini.git &> /dev/null
 sleep 1
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -218,7 +218,7 @@ echo -e "$COLOR1│${NC}  IP VPS        : $daftar"
 echo -e "$COLOR1│${NC}  Register Date : $hariini"
 echo -e "$COLOR1│${NC}  Expired Date  : $exp"
 cd
-rm -rf /root/permission
+rm -rf /root/ipmini
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
@@ -229,11 +229,11 @@ menu-ip
 }
 function delipvps(){
 clear
-rm -rf /root/permission &> /dev/null
+rm -rf /root/ipmini &> /dev/null
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/permission.git &> /dev/null
-cd /root/permission/ &> /dev/null
+git clone https://github.com/${USERGIT}/ipmini.git &> /dev/null
+cd /root/ipmini/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 touch ipmini &> /dev/null
@@ -275,13 +275,13 @@ Name     : $name1
 IPVPS    : $ivps1  
 Status   : Deleted on  $hariini2
 " 
-echo "${TEXTD}" >>/root/permission/delete_log  &> /dev/null
+echo "${TEXTD}" >>/root/ipmini/delete_log  &> /dev/null
 
 git add . &> /dev/null
 git commit -m remove &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/permission.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/permission.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/ipmini.git &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini.git &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
@@ -293,7 +293,7 @@ echo -e "$COLOR1│${NC}  Ip VPS       : $ivps1"
 echo -e "$COLOR1│${NC}  Expired Date : $exp"
 echo -e "$COLOR1│${NC}  Client Name  : $name1"
 cd
-rm -rf /root/permission
+rm -rf /root/ipmini
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
@@ -309,11 +309,11 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-rm -rf /root/permission
+rm -rf /root/ipmini
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/permission.git
-cd /root/permission/
+git clone https://github.com/${USERGIT}/ipmini.git
+cd /root/ipmini/
 rm -rf .git
 git init
 touch ipmini
@@ -401,8 +401,8 @@ sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/ipmini/main/ij
 git add .
 git commit -m renew
 git branch -M main
-git remote add origin https://github.com/${USERGIT}/permission.git
-git push -f https://${APIGIT}@github.com/${USERGIT}/permission.git
+git remote add origin https://github.com/${USERGIT}/ipmini.git
+git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini.git
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
@@ -416,7 +416,7 @@ echo -e "$COLOR1│${NC}  Days Added    : $masaaktif Days"
 echo -e "$COLOR1│${NC}  Expired Date  : $exp4"
 echo -e "$COLOR1│${NC}  Client Name   : $name1"
 cd
-rm -rf /root/permission
+rm -rf /root/ipmini
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
@@ -428,11 +428,11 @@ menu-ip
 
 function useripvps(){
 clear
-rm -rf /root/permission
+rm -rf /root/ipmini
 git config --global user.email "${EMAILGIT}"
 git config --global user.name "${USERGIT}"
-git clone https://github.com/${USERGIT}/permission.git
-cd /root/permission/
+git clone https://github.com/${USERGIT}/ipmini.git
+cd /root/ipmini/
 rm -rf .git
 git init
 touch ipmini
@@ -447,7 +447,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 cd
-rm -rf /root/permission
+rm -rf /root/ipmini
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip
@@ -472,7 +472,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip  
 }
-Isadmin=$(curl -sS https://raw.githubusercontent.com/Khoiril7/permission/main/ipmini | grep $MYIP | awk '{print $5}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | grep $MYIP | awk '{print $5}')
 if [ "$Isadmin" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
