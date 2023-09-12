@@ -184,7 +184,7 @@ exp=$(date -d "$exp days" +"%Y-%m-%d")
 hariini=$(date -d "0 days" +"%Y-%m-%d")
 git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
-git clone https://github.com/${USERGIT}/ipmini.git &> /dev/null
+git clone https://github.com/${USERGIT}/ipmini/main/ijin.git &> /dev/null
 cd /root/ipmini/ &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
@@ -280,8 +280,8 @@ echo "${TEXTD}" >>/root/ipmini/delete_log  &> /dev/null
 git add . &> /dev/null
 git commit -m remove &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USERGIT}/ipmini.git &> /dev/null
-git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini.git &> /dev/null
+git remote add origin https://github.com/${USERGIT}/ipmini/main/ijin &> /dev/null
+git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini/main/ijin &> /dev/null
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
@@ -401,8 +401,8 @@ sed -i "s/### $name1 $exp $ivps1/### $name1 $exp4 $ivps1/g" /root/ipmini/main/ij
 git add .
 git commit -m renew
 git branch -M main
-git remote add origin https://github.com/${USERGIT}/ipmini.git
-git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini.git
+git remote add origin https://github.com/${USERGIT}/ipmini/main/ijin.git
+git push -f https://${APIGIT}@github.com/${USERGIT}/ipmini/main/ijin.git
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
@@ -431,7 +431,7 @@ clear
 rm -rf /root/ipmini
 git config --global user.email "${EMAILGIT}"
 git config --global user.name "${USERGIT}"
-git clone https://github.com/${USERGIT}/ipmini.git
+git clone https://github.com/${USERGIT}/ipmini/main/ijin.git
 cd /root/ipmini/
 rm -rf .git
 git init
