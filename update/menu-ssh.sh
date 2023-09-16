@@ -95,7 +95,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
-menu-ssh
+m-sshovpn
 else
 echo "$Login" >> /etc/xray/ssh.txt
 fi
@@ -108,7 +108,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "    Press any key to back on menu"
-menu-ssh
+m-sshovpn
 fi
 
 read -p "   Password : " Pass
@@ -120,7 +120,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
+m-sshovpn
 fi
 read -p "   Expired (hari): " masaaktif
 if [ -z $masaaktif ]; then
@@ -131,7 +131,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "  Press any key to back on menu"
-menu-ssh
+m-sshovpn
 fi
 
 IP=$(curl -sS ifconfig.me);
@@ -158,8 +158,8 @@ if [[ ! -z "${PID}" ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│$NC  Username   : $Login" 
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"  
+echo -e "$COLOR1│$NC  Username   : $Login"                                  
 echo -e "$COLOR1│$NC  Password   : $Pass"
 echo -e "$COLOR1│$NC  Expired On : $exp" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -174,8 +174,10 @@ echo -e "$COLOR1│$NC  SSL/TLS    :$ssl"
 echo -e "$COLOR1│$NC  UDPGW      : 7100-7300" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "    GET wss://who.int/ HTTP/1.1[crlf]"
+echo -e "    Host: $domen [crlf]"
+echo -e "    Upgrade: websocket[crlf][crlf]"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
@@ -183,11 +185,11 @@ else
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│$NC  Username   : $Login" 
-echo -e "$COLOR1│$NC  Password   : $Pass"
-echo -e "$COLOR1│$NC  Expired On : $exp" 
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"       | tee -a /etc/log-create-sshws.log
+echo -e "$COLOR1│$NC  Username   : $Login"                                      | tee -a /etc/log-create-sshws.log
+echo -e "$COLOR1│$NC  Password   : $Pass"                                       | tee -a /etc/log-create-sshws.log
+echo -e "$COLOR1│$NC  Expired On : $exp"                                        | tee -a /etc/log-create-sshws.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"       | tee -a /etc/log-create-sshws.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│$NC  IP         : $IP" 
 echo -e "$COLOR1│$NC  Host       : $domen" 
@@ -199,15 +201,17 @@ echo -e "$COLOR1│$NC  SSL/TLS    :$ssl"
 echo -e "$COLOR1│$NC  UDPGW      : 7100-7300" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "    GET wss://who.int/ HTTP/1.1[crlf]"
+echo -e "    Host: $domen [crlf]"
+echo -e "    Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                 $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 fi
-echo -e ""
+echo -e "" | tee -a /etc/log-create-sshws.log
 read -n 1 -s -r -p "  Press any key to back on menu"
-menu-ssh
+m-sshovpn
 }
 function sshwss(){
     clear
@@ -251,7 +255,7 @@ echo -e "$COLOR1│${NC}  [INFO] • Restart is require for Changes"
 echo -e "$COLOR1│${NC}           to take effect"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -272,7 +276,7 @@ echo -e "$COLOR1│${NC}  [INFO] • Restart is require for Changes"
 echo -e "$COLOR1│${NC}           to take effect"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "  Press any key to back on menu"
@@ -296,7 +300,7 @@ echo -e "$COLOR1│$NC"
 echo -e "$COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -p " Select menu :  "  opt
@@ -374,11 +378,11 @@ rm -f /tmp/vpn-login-tcp.txt
 rm -f /tmp/vpn-login-udp.txt
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo "";
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
+m-sshovpn
 }
 
 function delssh(){
@@ -402,11 +406,11 @@ fi
 fi
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
+m-sshovpn
 }
 
 function renewssh(){
@@ -423,7 +427,7 @@ else
 echo -e "$COLOR1│${NC}   [INFO] Failure: User $User Not Exist."
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -434,7 +438,7 @@ if [ -z $User ]; then
 echo -e "$COLOR1│${NC}   [Error] Username cannot be empty "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -466,7 +470,7 @@ echo -e "   Days Added : $Days Days"
 echo -e "   Expires on : $Expiration_Display"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 else
 clear
@@ -477,12 +481,12 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "   Username Doesnt Exist      "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 fi
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
+m-sshovpn
 }
 
 
@@ -515,11 +519,11 @@ echo -e "$COLOR1┌────────────────────�
 echo "   Total: $JUMLAH User"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
+m-sshovpn
 }
 
 function trialssh(){
@@ -554,7 +558,7 @@ if [[ ! -z "${PID}" ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}            • SSH TRIAL ACCOUNT •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" 
 echo -e "$COLOR1│$NC  Username   : $Login" 
 echo -e "$COLOR1│$NC  Password   : $Pass"
 echo -e "$COLOR1│$NC  Expired On : $exp" 
@@ -573,7 +577,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 
 else
@@ -600,12 +604,12 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}  GET wss://who.int/ HTTP/1.1[crlf]Host: $domen [crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 fi
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-ssh
+m-sshovpn
 }
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -620,7 +624,7 @@ echo -e " $COLOR1┌────────────────────
  $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
@@ -634,7 +638,5 @@ case $opt in
 06 | 6) clear ; renewssh ;;
 07 | 7) clear ; memberssh ;;
 00 | 0) clear ; menu ;;
-*) clear ; menu-ssh ;;
+*) clear ; m-sshovpn ;;
 esac
-
-       
